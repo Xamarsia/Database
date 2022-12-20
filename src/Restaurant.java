@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class MenuDatabase {
+public class Restaurant {
     final String query = "CREATE TABLE restaurantmenu " +
             "(dishPK SERIAL PRIMARY KEY, " +
             "dishName VARCHAR(50) NOT NULL UNIQUE, " +
@@ -9,7 +9,6 @@ public class MenuDatabase {
             "discountPercent Integer CHECK(discountPercent BETWEEN 0 AND 100) DEFAULT 0);";
     private final String url = "jdbc:postgresql://localhost/Menu";
     private final String user = "postgres";
-    //    Restaurant menu
     private final String password = "*************";
 
     public static void printSQLException(SQLException ex) {
