@@ -40,20 +40,13 @@ public class Restaurant {
     }
 
     public void createTable() {
-
         System.out.println(query);
-        // Step 1: Establishing a Connection
-        try (
-                Connection connection = connect();
-
-                // Step 2:Create a statement using connection object
+        try (Connection connection = connect();
                 Statement statement = connection.createStatement();) {
 
-            // Step 3: Execute the query or update query
             statement.execute(query);
         } catch (SQLException e) {
 
-            // print SQL exception information
             printSQLException(e);
         }
     }
